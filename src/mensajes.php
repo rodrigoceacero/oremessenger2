@@ -38,11 +38,8 @@ try{
 <head>
     <meta charset="UTF-8">
     <title>List of messages</title>
-    <style>
-        .new-message{
-            margin-top: 40px;
-        }
-    </style>
+    <link rel="stylesheet" href="oremessenger.css">
+
 </head>
 <body>
 
@@ -57,7 +54,10 @@ try{
           </form>";
     }
 ?>
-<br />
-<button class="new-message">New message </button>
 </body>
+<br />
+<form action="nuevo.php" method="get"> <button class="new-message">New message</button> </form>
+
+<form action="index.php" method="get"> <button class="log-out">Log out</button> </form>
+
 </html>

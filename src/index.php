@@ -8,10 +8,16 @@ if (isset($_POST['login'])){
         $db = new PDO('mysql:host=127.0.0.1;port=33060;dbname=oremessenger', 'root', 'ejemplo_pass');
 
         $username = $_POST['username'];
-        $query = $db->query("SELECT * FROM person WHERE username = '$username'");
-        $user = $query->fetch(PDO::FETCH_ASSOC);
+
+        $sql = 'SELECT * FROM person WHERE username=:username';
+        $stmt = $db->prepare($sql);
+        $consulta1 = $stmt->execute([':username' => $username]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
         if ($user){
             if ($user['password'] === $_POST['password']){
+                session_start();
+                $_SESSION['username'] = $user['username'];
                 header("Location: mensajes.php");
             }else{
                 $error = 'Incorrect password';

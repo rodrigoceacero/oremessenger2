@@ -38,10 +38,8 @@ echo "<h3> $error </h3>";
 ?>
 
 <form method="post">
-    <label>Username: </label>
-    <input type="text" name="username" placeholder="Enter your username"/> <br /><br />
-    <label>Password: </label>
-    <input type="password" name="password" placeholder="Enter your password"/> <br /><br />
+    <label>Username: <input type="text" name="username" placeholder="Enter your username"/> <br /><br /> </label>
+    <label>Password: <input type="password" name="password" placeholder="Enter your password"/> <br /><br /> </label>
     <button type="submit" name="login" value="ok">Log in</button>
 </form>
 </body>
